@@ -1,0 +1,125 @@
+/* atividade-pontuada1/src/components/InfoJogador/style.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(-45deg, #0033a0, #ffffff, #ff0000, #ffffff);
+  background-size: 400% 400%;
+  animation: mudarCores 10s ease infinite;
+}
+
+@keyframes mudarCores {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.info-jogador {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 25px rgba(0,0,0,0.3);
+  text-align: center;
+  animation: surgir 1s ease;
+}
+
+@keyframes surgir {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Títulos */
+.info-jogador h2 {
+  color: #0033a0;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #d50032;
+  animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+  from { text-shadow: 2px 2px #d50032; }
+  to { text-shadow: 2px 2px #0033a0, 0 0 15px #ffffff; }
+}
+
+.info-jogador h3 {
+  color: #d50032;
+  margin-top: 30px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #0033a0;
+  padding-bottom: 5px;
+}
+
+/* Inputs e Formulário */
+.info-jogador form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: aparecerForm 1.5s ease;
+}
+
+@keyframes aparecerForm {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.info-jogador label {
+  font-weight: bold;
+  color: #0033a0;
+}
+
+.info-jogador input {
+  padding: 10px;
+  border: 2px solid #0033a0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.info-jogador input:focus {
+  border-color: #d50032;
+  outline: none;
+  box-shadow: 0 0 10px #0033a0;
+  transform: scale(1.05);
+}
+
+/* Botão */
+.info-jogador button {
+  background: linear-gradient(45deg, #0033a0, #d50032);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.info-jogador button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #0033a0, 0 0 15px #d50032;
+}
+
+/* Lista de jogadores */
+.info-jogador ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.info-jogador li {
+  background: rgba(0, 51, 160, 0.1);
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #0033a0;
+  animation: entrarLista 0.5s ease;
+}
+
+@keyframes entrarLista {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
