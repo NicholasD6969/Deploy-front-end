@@ -1,0 +1,81 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(-45deg, #000000, #0b0c2a, #150033, #000000);
+    background-size: 600% 600%;
+    animation: gradientBackground 20s ease infinite;
+}
+
+/* Animação do fundo */
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Container do relógio */
+#relogio {
+    display: flex;
+    font-size: 6rem;
+    gap: 1.5rem;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 2.5rem 4rem;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2),
+                0 0 60px rgba(0, 255, 255, 0.1);
+}
+
+/* Estilo dos blocos do relógio */
+#relogio div {
+    display: flex;
+    align-items: center;
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+    transition: all 0.3s ease;
+}
+
+/* Estilo dos números */
+#relogio span {
+    min-width: 2ch;
+    text-align: center;
+    animation: pulse 2.5s infinite alternate;
+}
+
+/* Animação suave de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        text-shadow: 0 0 10px #00f7ff;
+    }
+    100% {
+        transform: scale(1.05);
+        text-shadow: 0 0 20px #00f7ff, 0 0 30px #00f7ff;
+    }
+}
+/* Data e mês abaixo do relógio */
+#data {
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 20px);
+    transform: translateX(-50%);
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    text-shadow: 0 0 6px #00f7ff;
+    letter-spacing: 2px;
+    opacity: 0.85;
+    font-family: 'Orbitron', sans-serif;
+    pointer-events: none;
+}
